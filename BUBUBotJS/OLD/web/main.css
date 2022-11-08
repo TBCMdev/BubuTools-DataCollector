@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Roboto+Mono:wght@200&display=swap');
+
+*{
+    font-family: 'Roboto Mono', monospace;
+    font-size: medium;
+}
+h1,h2,h3{
+    font-size: xx-large;
+    font-weight: bolder;
+    color:greenyellow;
+}
+span #bold{
+    font-weight: bolder;
+}
+span{
+    color:#503eb6;
+}
+#wider{
+    width: 300px;
+}
+input{
+    padding:5px;
+    margin:20px;
+    background-color: #503eb6;
+    border: #3d2f8a;
+    color:greenyellow;
+}
+button{
+    background-color: rgb(122, 13, 13);
+    font-weight: bolder;
+    border: 2px red;
+    border-radius: 2px;
+    transition: all ease-in .15s;
+}
+button:hover{
+    transform:scale(103%);
+    background-color: red;
+}
+button:active{
+    transform:scale(100%);
+    background-color: rgb(122, 13, 13);
+}
+body{
+    background-color: rgb(28, 28, 28);
+}
