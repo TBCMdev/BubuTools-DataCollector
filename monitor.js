@@ -7,7 +7,7 @@ const cron = require('node-cron')
 const fs = require('fs').promises
 async function __monitorPopularCollections() {
     console.log('SCHEDULING EVERY DAY TO CLEAR...')
-    cron.schedule('0,59 0,59 23 ? * * *', MintDataCollHandler.cleanMints)
+    cron.schedule('0,59 0,59 23 * * * *', MintDataCollHandler.cleanMints)
     const COLLS = []
     
     const MAX_CONTENDERS = 200
@@ -72,6 +72,7 @@ async function __monitorPopularCollections() {
         return _
     }
     WhileDelayCallIterator(30000, async (iterations) => {
+        try{
         const res = await api.getCollectionMints([], {
             fromDate: new Date(), debug: true, perMint: (mint, exists) => {
                 if (exists) return false
@@ -113,6 +114,10 @@ async function __monitorPopularCollections() {
             }
         }
         return false;
+    }catch{
+        console.log("ERR: RATE LIMIT EXCEEDED... retrying...")
+        await (async () => {return new Promise(res => setTimeout(res, 5000))})()
+    }
     }, { iterateStart: true })
 }
 
