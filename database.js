@@ -61,13 +61,6 @@ function constructDBObject(obj) {
 async function db_connect() {
     try {
         mongoose.connect(DBAuth, () => { console.log('connected to database.') })
-        const test = new MintData({ name: "test", hash: "0x0", data: { mints: [], count: 0 }, collData: {} })
-        await test.save((err) => {
-            if (err) {
-                console.log(err)
-                return false
-            }
-        })
         //connect to database
         return true;
     } catch {
