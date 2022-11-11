@@ -1,7 +1,7 @@
 const api = require('./internal')
 const aapi = require('./internal-a')
 const { DelayCallIterator, WhileDelayCallIterator } = require('./interval')
-const addSummary = require('./bot')
+const addSummary = require('.')
 const { MintDataCollHandler } = require('./database')
 const cron = require('node-cron')
 const fs = require('fs').promises
