@@ -53,8 +53,8 @@ async function awaitMidnightStart() {
     d.setHours(0,0,0,0)
     var eta_ms = d - Date.now();
     console.log("WILL RUN AT MIDNIGHT.")
-    setTimeout(monitor.__monitorPopularCollections, eta_ms);
-    monitor.__monitorPopularCollections() //start popular moniotoring in background
+    //setTimeout(monitor.__monitorPopularCollections, eta_ms);
+    monitor.__monitorPopularCollections()
 }
 
 module.exports = addSummary;

@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 const DBAuth = "mongodb+srv://bubu-tools-admin:YqRFjlnoiFVwctZx@cluster0.70uec.mongodb.net/data?retryWrites=true&w=majority"
-const BUBUAuth = ""
-
 
 const MintDataSchema = new mongoose.Schema({ name: String, hash: String, data: { mints: Array, count: Number }, collData: Object }, { collection: "temporary-minting" })
 const MintData = mongoose.model('MintData', MintDataSchema)

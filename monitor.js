@@ -116,7 +116,7 @@ async function __monitorPopularCollections() {
         return false;
     }catch{
         console.log("ERR: RATE LIMIT EXCEEDED... retrying...")
-        await (async () => {return new Promise(res => setTimeout(res, 5000))})()
+        //await (async () => {return new Promise(res => setTimeout(res, 5000))})()
     }
     }, { iterateStart: true })
 }
